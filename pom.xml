@@ -1,0 +1,78 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.mihoyo.mobile</groupId>
+	<artifactId>wordpress-devops-demo</artifactId>
+	<packaging>pom</packaging>
+	<name>miHoYo Wordpress devops demo</name>
+	<version>1.0</version>
+
+	<properties>
+		<build.timestamp>${maven.build.timestamp}</build.timestamp>
+		<maven.build.timestamp.format>yyyyMMddHHmm</maven.build.timestamp.format> 
+	</properties>
+
+	<dependencies>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.5.3</version>
+				  <configuration>
+				    <descriptor>assembly.xml</descriptor>
+				  </configuration>
+				<executions>
+                    <execution>
+                        <id>bundle-project-sources</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<distributionManagement>
+		<repository>
+			<id>mihoyo-example</id>
+			<name>miHoYo Example Release</name>
+			<url>http://120.26.1.127:8081/content/repositories/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>mihoyo-example</id>
+			<url>http://120.26.1.127:8081/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<repositories>
+		<repository>
+			<id>mihoyo-public</id>
+			<name>miHoYo Public Repository</name>
+			<url>http://120.26.1.127:8081/content/groups/public/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>mihoyo-public</id>
+			<name>miHoYo Public Repository</name>
+			<url>http://120.26.1.127:8081/content/groups/public/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+</project>
