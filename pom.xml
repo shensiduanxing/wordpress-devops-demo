@@ -38,12 +38,13 @@
 
 	<distributionManagement>
 		<repository>
-			<id>mihoyo-example</id>
-			<name>miHoYo Example Release</name>
+			<id>mihoyo-releases</id>
+			<name>miHoYo Releases</name>
 			<url>http://120.26.1.127:8081/content/repositories/releases/</url>
 		</repository>
 		<snapshotRepository>
-			<id>mihoyo-example</id>
+			<id>mihoyo-snapshots</id>
+			<name>miHoYo Snapshots</name>
 			<url>http://120.26.1.127:8081/content/repositories/snapshots/</url>
 		</snapshotRepository>
 	</distributionManagement>
